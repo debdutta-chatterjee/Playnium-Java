@@ -1,7 +1,7 @@
 # Playnium-Java
 Industry standard Flexible , Plug &amp; play reliable automation framework
-
-Framewrork
+############################################################################
+Framewrork ->         
 Reliable
 Customizable
 Plug & Play
@@ -11,7 +11,8 @@ Modern
 Layered
 Easy to use
 
-Features
+############################################################################
+Features ->   
 Supports both Selenium & PlaywrightMulti Browser
 Parallel/Serial execution
 BDD & Non BDD test case flexibility
