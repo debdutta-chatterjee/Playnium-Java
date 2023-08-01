@@ -1,23 +1,24 @@
 # Playnium-Java
 Industry standard Flexible , Plug &amp; play reliable automation framework
 ############################################################################
-Framewrork ->         
-Reliable
-Customizable
-Plug & Play
-Robust
-Free
-Modern
-Layered
-Easy to use
+Framewrork ->   ------------------------------------------------------------      
+Reliable,
+Customizable,
+Plug & Play,
+Robust,
+Free,
+Modern,
+Layered,
+Easy to use,
 
 ############################################################################
-Features ->   
-Supports both Selenium & PlaywrightMulti Browser
-Parallel/Serial execution
-BDD & Non BDD test case flexibility
-Excel, JSON, XML support for test data
-UI & API test execution
-User state management
-Cookie, Token, oauth 2 authentication support
+Features ->   --------------------------------------------------------------
+Supports both Selenium & Playwright,
+Multi Browser,
+Parallel/Serial execution,
+BDD & Non BDD test case flexibility,
+Excel, JSON, XML support for test data,
+UI & API test execution,
+User state management,
+Cookie, Token, oauth 2 authentication support,
 Customizable, open source
