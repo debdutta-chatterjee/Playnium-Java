@@ -1,0 +1,94 @@
+using System;
+using System.Threading.Tasks;
+using Microsoft.Playwright;
+
+public class DynamicWebTableUtility
+{
+    private readonly IPage _page;
+
+    public DynamicWebTableUtility(IPage page)
+    {
+        _page = page;
+    }
+
+    public async Task<IElementHandle> GetElement(int row, int column)
+    {
+        string selector = $":scope > tbody > tr:nth-child({row}) > td:nth-child({column})";
+        return await _page.QuerySelectorAsync(selector);
+    }
+
+    public async Task<IElementHandle> GetRow(int rowId)
+    {
+        string selector = $":scope > tbody > tr:nth-child({rowId})";
+        return await _page.QuerySelectorAsync(selector);
+    }
+
+    public async Task<string> GetTextFromColumn(int row, int column)
+    {
+        var element = await GetElement(row, column);
+        if (element != null)
+        {
+            return await element.TextContentAsync();
+        }
+        return null;
+    }
+}
+
+using System;
+using System.Threading.Tasks;
+using Microsoft.Playwright;
+
+public class DynamicWebTableUtility
+{
+    private readonly IPage _page;
+
+    public DynamicWebTableUtility(IPage page)
+    {
+        _page = page;
+    }
+
+    public async Task<IElementHandle> GetElement(int row, int column)
+    {
+        string selector = $":scope > tbody > tr:nth-child({row}) > td:nth-child({column})";
+        return await _page.QuerySelectorAsync(selector);
+    }
+
+    public async Task<IElementHandle> GetRow(int rowId)
+    {
+        string selector = $":scope > tbody > tr:nth-child({rowId})";
+        return await _page.QuerySelectorAsync(selector);
+    }
+
+    public async Task<string> GetTextFromColumn(int row, int column)
+    {
+        var element = await GetElement(row, column);
+        if (element != null)
+        {
+            return await element.TextContentAsync();
+        }
+        return null;
+    }
+}
+
+using System;
+using System.Threading.Tasks;
+using Microsoft.Playwright;
+
+class Program
+{
+    static async Task Main(string[] args)
+    {
+        using var playwright = await Playwright.CreateAsync();
+        await using var browser = await playwright.Chromium.LaunchAsync();
+        var page = await browser.NewPageAsync();
+        await page.GotoAsync("https://example.com"); // Replace with your URL
+        
+        var tableUtility = new DynamicWebTableUtility(page);
+
+        // Example usage
+        var text = await tableUtility.GetTextFromColumn(2, 3);
+        Console.WriteLine($"Text at row 2, column 3: {text}");
+
+        await browser.CloseAsync();
+    }
+}
